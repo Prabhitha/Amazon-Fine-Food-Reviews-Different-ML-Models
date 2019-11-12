@@ -1,7 +1,7 @@
 # Machine-Learning
-Amazon Fine Food Reviews Analysis
-Data Source: https://www.kaggle.com/snap/amazon-fine-food-reviews
+Amazon Fine Food Reviews Analysis and Modelling using various Machine Learning Models
 
+Data Source: https://www.kaggle.com/snap/amazon-fine-food-reviews
 EDA: https://nycdatascience.com/blog/student-works/amazon-fine-foods-visualization/
 
 The Amazon Fine Food Reviews dataset consists of reviews of fine foods from Amazon.
@@ -12,7 +12,7 @@ Number of products: 74,258
 Timespan: Oct 1999 - Oct 2012
 Number of Attributes/Columns in data: 10
 
-Attribute Information:
+## Attribute Information:  
 
 Id
 ProductId - unique identifier for the product
@@ -24,9 +24,9 @@ Score - rating between 1 and 5
 Time - timestamp for the review
 Summary - brief summary of the review
 Text - text of the review
-Objective:
-Given a review, determine whether the review is positive (Rating of 4 or 5) or negative (rating of 1 or 2).
 
+## Objective:
+Given a review, determine whether the review is positive (Rating of 4 or 5) or negative (rating of 1 or 2).
 
 [Q] How to determine if a review is positive or negative?
 
