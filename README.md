@@ -30,7 +30,7 @@ Given a review, determine whether the review is positive (Rating of 4 or 5) or n
 
 **[Q] How to determine if a review is positive or negative?**
 
-[Ans] We could use the Score/Rating. A rating of 4 or 5 could be cosnidered a positive review. A review of 1 or 2 could be considered negative. A review of 3 is nuetral and ignored. This is an approximate and proxy way of determining the polarity (positivity/negativity) of a review.
+**[Ans]** We could use the Score/Rating. A rating of 4 or 5 could be cosnidered a positive review. A review of 1 or 2 could be considered negative. A review of 3 is nuetral and ignored. This is an approximate and proxy way of determining the polarity (positivity/negativity) of a review.
 
 ## Data Visualization using PCA and t-SNE
 
@@ -40,7 +40,8 @@ Given a review, determine whether the review is positive (Rating of 4 or 5) or n
 3. Since SCORE = 3 is Neutral, we will not consider those reviews in our classiication
 
 ### Exploratory Data Analysis
-**Data Cleaning: 1. Removing duplicate values **
+
+**Data Cleaning: 1. Removing duplicate values**
 
 1. It's neccessary to remove the duplicate values from our data points to get unbiased results.
 2. In out dataset it is observed that multiple reviews are with the same values for UserId, ProfileName, Score, Time, Summary and Text.
@@ -75,10 +76,30 @@ Hence in the Preprocessing phase we do the following in the order below:-
 
 After which we collect the words used to describe positive and negative reviews
 
-**2D Visualization using PCA:** BoW unigram, BoW BIGrams, TF-IDF: Unigrams, TF-IDF: Bigrams, Average Word2vec, TF-IDF Word2vec
+## 2D Visualization using PCA:
+BoW unigram, BoW BIGrams, TF-IDF: Unigrams, TF-IDF: Bigrams, Average Word2vec, TF-IDF Word2vec
 
-**2D Visualization using t-SNE:** BoW unigram, BoW BIGrams, TF-IDF: Unigrams, TF-IDF: Bigrams, Average Word2vec, TF-IDF Word2vec
+## 2D Visualization using t-SNE: 
+BoW unigram, BoW BIGrams, TF-IDF: Unigrams, TF-IDF: Bigrams, Average Word2vec, TF-IDF Word2vec
 
-**Applying KNN brute force:** BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
+1. When comparing all the above plots, 2D visualization using T-SNE BOW and TF-IDF(Unigram) is better compared to others.
+2. However none of the above plots linearly seperates both positive and negative points using a plane
 
-**Applying KNN kd-tree:** BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
+## Applying KNN brute force: 
+BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
+
+## Applying KNN kd-tree:
+BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
+
++------------+---------+-----------------+-----------+----------+
+| Vectorizer |  Model  | Hyper parameter | Train AUC | Test AUC |
++------------+---------+-----------------+-----------+----------+
+|    BOW     |  Brute  |        11       |    0.96   |   0.7    |
+|   TFIDF    |  Brute  |        3        |    0.99   |   0.61   |
+|    W2V     |  Brute  |        13       |    0.98   |   0.66   |
+|  TFIDFW2V  |  Brute  |        11       |    0.98   |   0.61   |
+|    BOW     | kd_tree |        9        |    0.97   |   0.7    |
+|   TFIDF    | kd_tree |        11       |    0.96   |   0.56   |
+|    W2V     | kd_tree |        9        |    0.98   |   0.56   |
+|  TFIDFW2V  | kd_tree |        9        |    0.98   |   0.54   |
++------------+---------+-----------------+-----------+----------+
