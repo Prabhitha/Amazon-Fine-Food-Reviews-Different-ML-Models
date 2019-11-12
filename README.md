@@ -1,4 +1,4 @@
-# Amazon Fine Food Reviews Analysis and Modelling using various Machine Learning Models
+## Amazon Fine Food Reviews Analysis using various Machine Learning Models
 
 - Data Source: https://www.kaggle.com/snap/amazon-fine-food-reviews
 - EDA: https://nycdatascience.com/blog/student-works/amazon-fine-foods-visualization/
