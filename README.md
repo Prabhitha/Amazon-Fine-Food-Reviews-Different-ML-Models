@@ -76,24 +76,18 @@ Hence in the Preprocessing phase we do the following in the order below:-
 
 After which we collect the words used to describe positive and negative reviews
 
-## 2D Visualization using PCA:
-BoW unigram, BoW BIGrams, TF-IDF: Unigrams, TF-IDF: Bigrams, Average Word2vec, TF-IDF Word2vec
-
-## 2D Visualization using t-SNE: 
+## 2D Visualization using PCA and t-SNE:
 BoW unigram, BoW BIGrams, TF-IDF: Unigrams, TF-IDF: Bigrams, Average Word2vec, TF-IDF Word2vec
 
 1. When comparing all the above plots, 2D visualization using T-SNE BOW and TF-IDF(Unigram) is better compared to others.
 2. However none of the above plots linearly seperates both positive and negative points using a plane
 
-## Applying KNN brute force: 
+## Applying KNN brute force and kd-tree: 
 BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
 
-## Applying KNN kd-tree:
-BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
-
-+------------+---------+-----------------+-----------+----------+
+-----------------------------------------------------------------
 | Vectorizer |  Model  | Hyper parameter | Train AUC | Test AUC |
-+------------+---------+-----------------+-----------+----------+
+-----------------------------------------------------------------
 |    BOW     |  Brute  |        11       |    0.96   |   0.7    |
 |   TFIDF    |  Brute  |        3        |    0.99   |   0.61   |
 |    W2V     |  Brute  |        13       |    0.98   |   0.66   |
@@ -102,4 +96,4 @@ BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
 |   TFIDF    | kd_tree |        11       |    0.96   |   0.56   |
 |    W2V     | kd_tree |        9        |    0.98   |   0.56   |
 |  TFIDFW2V  | kd_tree |        9        |    0.98   |   0.54   |
-+------------+---------+-----------------+-----------+----------+
+-----------------------------------------------------------------
