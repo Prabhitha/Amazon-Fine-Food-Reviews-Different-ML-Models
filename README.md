@@ -97,3 +97,57 @@ BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
 |    W2V     | kd_tree |        9        |    0.98   |   0.56   |
 |  TFIDFW2V  | kd_tree |        9        |    0.98   |   0.54   |
 
+## Applying Naive Bayes:
+BOW, TFIDF
+
+
+| Vectorizer | Hyper parameter | Train AUC | Test AUC |
+|------------|-----------------|-----------|----------|
+|    BOW     |      10000      |    0.99   |   0.91   |
+|   TFIDF    |      10000      |    0.99   |   0.89   |
+
+## Applying Logistic Regression:
+BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
+
+
+| Vectorizer | Regularization | Hyper parameter | Train AUC | Test AUC |
+|------------|----------------|-----------------|-----------|----------|
+|    BOW     |       L1       |        10       |   0.999   |  0.946   |
+|   TFIDF    |       L1       |        1        |   0.999   |  0.953   |
+|    W2V     |       L1       |       0.1       |   0.916   |  0.806   |
+|  TFIDFW2V  |       L1       |       0.1       |   0.892   |  0.746   |
+|    BOW     |       L2       |      0.0001     |   0.999   |  0.924   |
+|   TFIDF    |       L2       |      0.0001     |   0.999   |  0.935   |
+|    W2V     |       L2       |       0.01      |   0.916   |  0.808   |
+|  TFIDFW2V  |       L2       |       0.01      |   0.892   |  0.747   |
+
+## Applying SVM:
+BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
+
+
+|      SVM      | Vectorizer | Regularization | Hyper parameter | Train AUC | Test AUC |
+|---------------|------------|----------------|-----------------|-----------|----------|
+| Linear Kernal |    BOW     |       L1       |       0.01      |   0.852   |  0.739   |
+| Linear Kernal |    BOW     |       L2       |      10000      |   0.999   |  0.909   |
+| Linear Kernal |   TFIDF    |       L1       |      0.001      |   0.997   |  0.875   |
+| Linear Kernal |   TFIDF    |       L2       |        10       |   0.999   |  0.909   |
+| Linear Kernal |  AVG W2V   |       L1       |       0.01      |   0.938   |  0.908   |
+| Linear Kernal |  AVG W2V   |       L2       |        1        |   0.929   |  0.911   |
+| Linear Kernal | TFTDF W2V  |       L1       |      0.001      |   0.919   |  0.909   |
+| Linear Kernal | TFTDF W2V  |       L2       |      0.001      |   0.919   |   0.91   |
+|   RBF Kernal  |    BOW     |       -        |        1        |   0.992   |  0.883   |
+|   RBF Kernal  |   TFIDF    |       -        |        1        |   0.993   |  0.888   |
+|   RBF Kernal  |  AVG W2V   |       -        |        1        |   0.956   |  0.888   |
+|   RBF Kernal  | TFIDF W2V  |       -        |        1        |   0.945   |  0.869   |
+
+## Applying Decision Trees:
+BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
+
+
+| Vectorizer | min_samples_split | max_depth | Train AUC | Test AUC |
+|------------|-------------------|-----------|-----------|----------|
+|    BOW     |        500        |     10    |   0.911   |  0.821   |
+|   TFIDF    |        500        |     10    |   0.955   |  0.778   |
+|  AVG W2V   |        100        |    100    |   0.972   |  0.818   |
+| TFIDF W2V  |        100        |     50    |   0.965   |  0.789   |
+
