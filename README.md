@@ -1,8 +1,8 @@
 # Machine-Learning
-Amazon Fine Food Reviews Analysis and Modelling using various Machine Learning Models
+**Amazon Fine Food Reviews Analysis and Modelling using various Machine Learning Models**
 
-Data Source: https://www.kaggle.com/snap/amazon-fine-food-reviews
-EDA: https://nycdatascience.com/blog/student-works/amazon-fine-foods-visualization/
+- Data Source: https://www.kaggle.com/snap/amazon-fine-food-reviews
+- EDA: https://nycdatascience.com/blog/student-works/amazon-fine-foods-visualization/
 
 The Amazon Fine Food Reviews dataset consists of reviews of fine foods from Amazon.
 
@@ -31,3 +31,54 @@ Given a review, determine whether the review is positive (Rating of 4 or 5) or n
 **[Q] How to determine if a review is positive or negative?**
 
 [Ans] We could use the Score/Rating. A rating of 4 or 5 could be cosnidered a positive review. A review of 1 or 2 could be considered negative. A review of 3 is nuetral and ignored. This is an approximate and proxy way of determining the polarity (positivity/negativity) of a review.
+
+## Data Visualization using PCA and t-SNE
+
+### Reading the data from SQLITE
+1. We are going to classify our data using the attribute "SCORE" from our dataframe
+2. SCORE > 3 is classified as Positive review, SCORE < 3 is classified as Negative review
+3. Since SCORE = 3 is Neutral, we will not consider those reviews in our classiication
+
+### Exploratory Data Analysis
+**Data Cleaning: 1. Removing duplicate values **
+
+1. It's neccessary to remove the duplicate values from our data points to get unbiased results.
+2. In out dataset it is observed that multiple reviews are with the same values for UserId, ProfileName, Score, Time, Summary and Text.
+3. When an user gives a review for a particular flavour of some product, the same review is getting added to all the flavours of that product.
+4. In order to avoid redundancy, we are eliminating the duplicate values.
+
+**Data Cleaning: 2. Removing values for which HelpfulnessNumerator is greater than HelpfulnessDenominator**
+
+1. It has been observed that in the below two rows, the value of HelpfulnessNumerator is greater than HelpfulnessDenominator which is not practically possible hence removing them from our data
+
+**Data Cleaning: 3. Removing miscategorized data points**
+
+1. The products "B00004CI84" and "B00004CXX9" belong to movie category. Since the product name contains the word "Juice", it has been miscategorized under food.
+2. "B0002YW26E" is a Pest control product. Miscategorized as food.
+3. The products "6641040" and "2841233731" are CookBooks.
+
+**Text Preprocessing**: Stemming, stop-word removal and Lemmatization
+
+**Preprocessing Review Text**
+
+Now that we have finished deduplication our data requires some preprocessing before we go on further with analysis and making the prediction model.
+
+Hence in the Preprocessing phase we do the following in the order below:-
+
+1. Begin by removing the html tags
+2. Remove any punctuations or limited set of special characters like , or . or # etc.
+3. Check if the word is made up of english letters and is not alpha-numeric
+4. Check to see if the length of the word is greater than 2 (as it was researched that there is no adjective in 2-letters)
+5. Convert the word to lowercase
+6. Remove Stopwords
+7. Finally Snowball Stemming the word (it was obsereved to be better than Porter Stemming)
+
+After which we collect the words used to describe positive and negative reviews
+
+**2D Visualization using PCA:** BoW unigram, BoW BIGrams, TF-IDF: Unigrams, TF-IDF: Bigrams, Average Word2vec, TF-IDF Word2vec
+
+**2D Visualization using t-SNE:** BoW unigram, BoW BIGrams, TF-IDF: Unigrams, TF-IDF: Bigrams, Average Word2vec, TF-IDF Word2vec
+
+**Applying KNN brute force:** BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
+
+**Applying KNN kd-tree:** BOW, TFIDF, Average Word2vec, TF-IDF Word2vec
